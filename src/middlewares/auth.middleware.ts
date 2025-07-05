@@ -11,12 +11,12 @@ const PayloadSchema = z.object({
 export const auth = (request: Request, response: Response, next: NextFunction) => {
     try {
         // console.log("request:",request)
-        console.log("Inside Auth route")
-        console.log(request.cookies)
+        // console.log("Inside Auth route")
+        // console.log(request.cookies)
         const token = request.cookies.token;
-        console.log("token from auth :", token)
+        // console.log("token from auth :", token)
         if (!token) {
-            console.log("Token not Found")
+            // console.log("Token not Found")
             response.status(401).json({
                 success: false,
                 isAuthorized: false,
@@ -36,9 +36,9 @@ export const auth = (request: Request, response: Response, next: NextFunction) =
             return;
         }
         const parsed = jwt.verify(token, secret);
-        console.log("Parsed:", parsed)
+        // console.log("Parsed:", parsed)
         const result = PayloadSchema.safeParse(parsed);
-        console.log("Results:::", result)
+        // console.log("Results:::", result)
         if (!result.success) {
             response.status(401).json({
                 success: false,

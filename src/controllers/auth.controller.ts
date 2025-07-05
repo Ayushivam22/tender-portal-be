@@ -123,8 +123,8 @@ export const signin = async (request: Request, response: Response) => {
             // secure: process.env.NODE_ENV !== "development",
             secure:false
         });
-        console.log("TOKEN:",token)
-        console.log("response.cookie:",response.cookie)
+        // console.log("TOKEN:",token)
+        // console.log("response.cookie:",response.cookie)
         response.on('finish', () => {
             console.log('Set-Cookie header:', response.getHeader('Set-Cookie'));
         });
@@ -133,7 +133,7 @@ export const signin = async (request: Request, response: Response) => {
             success: true,
             message: "User signed in successfully"
         });
-        console.log("User signed in Successfully")
+        // console.log("User signed in Successfully")
         return;
     } catch (error) {
         console.error('Error in signin:', error);

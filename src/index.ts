@@ -1,6 +1,5 @@
 import dotenv from "dotenv";
 dotenv.config();
-// import "/types/express"
 import cookieParse from "cookie-parser"
 import express, { Request, Response } from "express"
 import authRouter from "./routes/auth.route";
@@ -13,7 +12,7 @@ const app = express();
 
 
 app.use(cors({
-    origin: "http://localhost:4000",
+    origin: `${process.env.CLIENT_URL}`,
     credentials: true
 }));
 

@@ -4,10 +4,10 @@ import { number } from "zod/v4";
 
 export const dashboard = async (request: Request, response: Response) => {
 
-    console.log("reached controller :::: ")
+    // console.log("reached controller :::: ")
     const { userId } = request;
-    console.log("User id :")
-    console.log(userId)
+    // console.log("User id :")
+    // console.log(userId)
     if (!userId) {
         response.status(401).json({
             success: false,
