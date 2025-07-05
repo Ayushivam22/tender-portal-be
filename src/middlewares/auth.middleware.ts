@@ -13,6 +13,7 @@ export const auth = (request: Request, response: Response, next: NextFunction) =
         // console.log("request:",request)
         // console.log("Inside Auth route")
         // console.log(request.cookies)
+        console.log('Cookies:', request.cookies);
         const token = request.cookies.token;
         // console.log("token from auth :", token)
         if (!token) {
