@@ -63,6 +63,7 @@ export const signup = async (
         response.cookie("token", token, {
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true,
+            sameSite:'none',
             secure: process.env.NODE_ENV !== "development",
         });
 
@@ -120,8 +121,9 @@ export const signin = async (request: Request, response: Response) => {
         response.cookie("token", token, {
             maxAge: 7 * 24 * 60 * 60 * 1000,
             httpOnly: true,
-            // secure: process.env.NODE_ENV !== "development",
-            secure:false
+            sameSite:'none',
+            secure: process.env.NODE_ENV !== "development",
+            // secure:false
         });
         // console.log("TOKEN:",token)
         // console.log("response.cookie:",response.cookie)
