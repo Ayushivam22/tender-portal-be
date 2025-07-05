@@ -17,7 +17,7 @@ export const auth = (request: Request, response: Response, next: NextFunction) =
         const token = request.cookies.token;
         // console.log("token from auth :", token)
         if (!token) {
-            // console.log("Token not Found")
+            console.log("Token not Found")
             response.status(401).json({
                 success: false,
                 isAuthorized: false,
