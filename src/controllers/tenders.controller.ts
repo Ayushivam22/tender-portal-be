@@ -52,7 +52,7 @@ export const getAllTenders = async (request: Request, response: Response): Promi
         });
         return;
     } catch (error) {
-        console.error("Error fetching tenders:", error);
+        // console.error("Error fetching tenders:", error);
         response.status(500).json({ success: false, error: "Failed to fetch tenders." });
         return;
     }
@@ -244,7 +244,7 @@ export const deleteTender = async (request: Request, response: Response): Promis
         );
         response.status(200).json({ success: true, message: "Tender deleted successfully." });
     } catch (error) {
-        console.error("Error deleting tender:", error);
+        //console.error("Error deleting tender:", error);
         response.status(500).json({ success: false, error: "Failed to delete tender." });
     }
 };
@@ -263,7 +263,7 @@ export const getTender = async (request: Request, response: Response): Promise<v
         }
         response.status(200).json({ success: true, data: tenderRes.rows[0] });
     } catch (error) {
-        console.error("Error fetching tender:", error);
+        //console.error("Error fetching tender:", error);
         response.status(500).json({ success: false, error: "Failed to fetch tender." });
     }
 };
@@ -293,7 +293,7 @@ export const getMyTenders = async (request: Request, response: Response): Promis
         );
         response.status(200).json({ success: true, myTenders: tendersRes.rows });
     } catch (error) {
-        console.error("Error fetching my tenders:", error);
+        //console.error("Error fetching my tenders:", error);
         response.status(500).json({ success: false, error: "Failed to fetch your tenders." });
     }
 };

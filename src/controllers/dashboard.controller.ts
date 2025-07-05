@@ -28,7 +28,7 @@ export const dashboard = async (request: Request, response: Response) => {
             })
             return;
         }
-        console.log("Printing the rowss:::",res.rows);
+        // console.log("Printing the rowss:::",res.rows);
         response.status(200).json({
             success: true,
             data: res.rows[0],
@@ -37,7 +37,7 @@ export const dashboard = async (request: Request, response: Response) => {
         })
         return;
     } catch (error) {
-        console.log("error fetching company data:", error)
+        // console.log("error fetching company data:", error)
         response.status(400).json({
             success: false,
             isCompanyRegistered: false,

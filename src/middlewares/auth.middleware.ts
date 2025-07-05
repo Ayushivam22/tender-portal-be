@@ -50,10 +50,10 @@ export const auth = (request: Request, response: Response, next: NextFunction) =
         const userId = result.data.userId;
         request.userId = userId;
         response.isAuthorized = true;
-        console.log("AUthorisation Successful")
+        // console.log("AUthorisation Successful")
         next();
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         response.status(401).json({
             success: false,
             isAuthorized: false,

@@ -72,7 +72,7 @@ export const signup = async (
         });
         return;
     } catch (error) {
-        console.log(error)
+        // console.log(error)/
         response.status(500).json({
             success: false,
             error: `Error adding user`
@@ -125,9 +125,9 @@ export const signin = async (request: Request, response: Response) => {
         });
         // console.log("TOKEN:",token)
         // console.log("response.cookie:",response.cookie)
-        response.on('finish', () => {
-            console.log('Set-Cookie header:', response.getHeader('Set-Cookie'));
-        });
+        // response.on('finish', () => {
+        //     console.log('Set-Cookie header:', response.getHeader('Set-Cookie'));
+        // });
         
         response.status(200).json({
             success: true,
